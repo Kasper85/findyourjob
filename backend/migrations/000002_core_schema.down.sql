@@ -1,0 +1,9 @@
+-- 000002_core_schema.down.sql
+
+DROP TABLE IF EXISTS candidate_skills CASCADE;
+DROP TABLE IF EXISTS skills CASCADE;
+DROP TABLE IF EXISTS recruiters CASCADE;
+DROP TABLE IF EXISTS companies CASCADE;
+DROP TABLE IF EXISTS candidate_profiles CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+

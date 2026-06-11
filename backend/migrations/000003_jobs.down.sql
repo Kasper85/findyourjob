@@ -1,0 +1,5 @@
+-- 000003_jobs.down.sql
+
+DROP TABLE IF EXISTS job_skills CASCADE;
+DROP TABLE IF EXISTS jobs CASCADE;
+
