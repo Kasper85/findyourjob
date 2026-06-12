@@ -5,7 +5,7 @@
 [![Stack](https://img.shields.io/badge/backend-Go_+_Gin-00ADD8?logo=go)](backend/)
 [![Stack](https://img.shields.io/badge/frontend-React_19_+_TanStack-61DAFB?logo=react)](src/)
 [![DB](https://img.shields.io/badge/database-PostgreSQL-4169E1?logo=postgresql)](backend/migrations/)
-[![Phase](https://img.shields.io/badge/phase-8/15_complete-00EA64)](ROADMAP.md)
+[![Phase](https://img.shields.io/badge/phase-15/15-00EA64)](ROADMAP.md)
 
 ---
 
@@ -20,8 +20,8 @@ Everything runs locally: your data, your LLM, your vector DB. No cloud dependenc
 ```
 frontend/ (React + TanStack Start)          backend/ (Go + Gin)
     │                                              │
-    ├── 52 routes (candidate + company)            ├── REST API (:8080)
-    ├── mock data → migrating to real API          ├── Modular Monolith + Clean Architecture
+    ├── 56 routes (candidate + company)            ├── REST API (:8080)
+    ├── connected to real API                       ├── Modular Monolith + Clean Architecture
     ├── shadcn/ui design system                    ├── PostgreSQL (13 tables)
     └── Tailwind 4 + dark mode                     └── golang-migrate migrations
 ```
@@ -30,19 +30,14 @@ frontend/ (React + TanStack Start)          backend/ (Go + Gin)
 
 | Phase | Status |
 |-------|--------|
-| 0. Idea & Requirements | ✅ |
-| 1. Mockups & UX | ✅ |
-| 2. Frontend (Lovable) | ✅ |
-| 3. Frontend Cleanup | ✅ |
-| 4. Architecture & Data Model | ✅ |
-| 5. Backend Bootstrap (Go + Gin) | ✅ |
-| 6. Database Schema & Migrations | ✅ |
-| 7. Auth + Users | ✅ |
-| 8. Jobs + Applications | ✅ |
-| 9. Evaluations + Results | ⬜ Next |
-| 10–15 | ⬜ Pending |
+| 0–9 | ✅ Foundation, Backend, Database, Auth, Jobs, Evaluations |
+| 10. Matching Engine | ✅ |
+| 11–12. Certifications + Verification | ✅ |
+| 13. Interviews | ✅ |
+| 14. Frontend Connection | ✅ |
+| 15. Polish & QA | ⬜ In progress |
 
-Full status: [`PROJECT_STATUS.md`](PROJECT_STATUS.md) · Roadmap: [`ROADMAP.md`](ROADMAP.md)
+Full status: [`PROJECT_STATUS.md`](PROJECT_STATUS.md) · Roadmap: [`ROADMAP.md`](ROADMAP.md) · History: [`PROJECT_HISTORY.md`](PROJECT_HISTORY.md)
 
 ## Quick Start
 
@@ -91,6 +86,8 @@ npm run dev                    # → http://localhost:3000
 | [`DATABASE.md`](DATABASE.md) | Database schema, entity relationships, migration guide |
 | [`ROADMAP.md`](ROADMAP.md) | Project phases and progress |
 | [`PROJECT_STATUS.md`](PROJECT_STATUS.md) | Current state, completed work, next steps |
+| [`PROJECT_HISTORY.md`](PROJECT_HISTORY.md) | Executive summary of completed phases |
+| [`DECISIONS.md`](DECISIONS.md) | Architecture Decision Records |
 | [`backend/README.md`](backend/README.md) | Backend-specific setup and API docs |
 
 ## Directory Structure
@@ -107,9 +104,11 @@ find-your-job/
 │   └── migrations/            # golang-migrate SQL files
 ├── src/                       # React + TanStack frontend
 │   ├── components/            # UI components (app, empresa, landing, ui)
-│   ├── routes/                # File-based routes (52 pages)
-│   └── lib/                   # Utilities, mock data
-├── archivos_markdown/         # Historical docs & phase reports
+│   ├── routes/                # File-based routes (56 pages)
+│   └── lib/                   # Utilities, API client
+├── docs/
+│   ├── archive/               # Historical documentation
+│   ...
 ├── ROADMAP.md
 ├── ARCHITECTURE.md
 └── README.md                  # ← You are here

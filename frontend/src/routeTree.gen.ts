@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PreciosRouteImport } from './routes/precios'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as AppRouteImport } from './routes/app'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EmpresaIndexRouteImport } from './routes/empresa.index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
@@ -49,6 +50,7 @@ import { Route as AppConfiguracionRouteImport } from './routes/app.configuracion
 import { Route as AppChallengesRouteImport } from './routes/app.challenges'
 import { Route as AppCertificacionesRouteImport } from './routes/app.certificaciones'
 import { Route as AppAprendizajeRouteImport } from './routes/app.aprendizaje'
+import { Route as AdminVerificacionRouteImport } from './routes/admin.verificacion'
 import { Route as EmpresaVacantesIndexRouteImport } from './routes/empresa.vacantes.index'
 import { Route as AppVacantesIndexRouteImport } from './routes/app.vacantes.index'
 import { Route as AppPerfilIndexRouteImport } from './routes/app.perfil.index'
@@ -78,6 +80,11 @@ const EmpresaRoute = EmpresaRouteImport.update({
 const AppRoute = AppRouteImport.update({
   id: '/app',
   path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -265,6 +272,11 @@ const AppAprendizajeRoute = AppAprendizajeRouteImport.update({
   path: '/aprendizaje',
   getParentRoute: () => AppRoute,
 } as any)
+const AdminVerificacionRoute = AdminVerificacionRouteImport.update({
+  id: '/verificacion',
+  path: '/verificacion',
+  getParentRoute: () => AdminRoute,
+} as any)
 const EmpresaVacantesIndexRoute = EmpresaVacantesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -344,9 +356,11 @@ const AppEvaluacionesIdResultRoute = AppEvaluacionesIdResultRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/app': typeof AppRouteWithChildren
   '/empresa': typeof EmpresaRouteWithChildren
   '/precios': typeof PreciosRoute
+  '/admin/verificacion': typeof AdminVerificacionRoute
   '/app/aprendizaje': typeof AppAprendizajeRoute
   '/app/certificaciones': typeof AppCertificacionesRouteWithChildren
   '/app/challenges': typeof AppChallengesRoute
@@ -401,7 +415,9 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/precios': typeof PreciosRoute
+  '/admin/verificacion': typeof AdminVerificacionRoute
   '/app/aprendizaje': typeof AppAprendizajeRoute
   '/app/challenges': typeof AppChallengesRoute
   '/app/configuracion': typeof AppConfiguracionRoute
@@ -451,9 +467,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRouteWithChildren
   '/app': typeof AppRouteWithChildren
   '/empresa': typeof EmpresaRouteWithChildren
   '/precios': typeof PreciosRoute
+  '/admin/verificacion': typeof AdminVerificacionRoute
   '/app/aprendizaje': typeof AppAprendizajeRoute
   '/app/certificaciones': typeof AppCertificacionesRouteWithChildren
   '/app/challenges': typeof AppChallengesRoute
@@ -510,9 +528,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/app'
     | '/empresa'
     | '/precios'
+    | '/admin/verificacion'
     | '/app/aprendizaje'
     | '/app/certificaciones'
     | '/app/challenges'
@@ -567,7 +587,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/admin'
     | '/precios'
+    | '/admin/verificacion'
     | '/app/aprendizaje'
     | '/app/challenges'
     | '/app/configuracion'
@@ -616,9 +638,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/app'
     | '/empresa'
     | '/precios'
+    | '/admin/verificacion'
     | '/app/aprendizaje'
     | '/app/certificaciones'
     | '/app/challenges'
@@ -674,6 +698,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRouteWithChildren
   AppRoute: typeof AppRouteWithChildren
   EmpresaRoute: typeof EmpresaRouteWithChildren
   PreciosRoute: typeof PreciosRoute
@@ -707,6 +732,13 @@ declare module '@tanstack/react-router' {
       path: '/app'
       fullPath: '/app'
       preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -968,6 +1000,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAprendizajeRouteImport
       parentRoute: typeof AppRoute
     }
+    '/admin/verificacion': {
+      id: '/admin/verificacion'
+      path: '/verificacion'
+      fullPath: '/admin/verificacion'
+      preLoaderRoute: typeof AdminVerificacionRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/empresa/vacantes/': {
       id: '/empresa/vacantes/'
       path: '/'
@@ -1075,6 +1114,16 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface AdminRouteChildren {
+  AdminVerificacionRoute: typeof AdminVerificacionRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminVerificacionRoute: AdminVerificacionRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 interface AppCertificacionesRouteChildren {
   AppCertificacionesIdRoute: typeof AppCertificacionesIdRoute
@@ -1241,6 +1290,7 @@ const EmpresaRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRouteWithChildren,
   AppRoute: AppRouteWithChildren,
   EmpresaRoute: EmpresaRouteWithChildren,
   PreciosRoute: PreciosRoute,

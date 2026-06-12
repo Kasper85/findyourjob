@@ -1,0 +1,44 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - 'link "{} Find Your Job." [ref=e4] [cursor=pointer]':
+        - /url: /
+        - generic [ref=e6]: "{}"
+        - generic [ref=e7]: Find Your Job.
+      - generic [ref=e9]:
+        - heading "Bienvenido de vuelta" [level=1] [ref=e10]
+        - paragraph [ref=e11]: Inicia sesión para continuar a tu dashboard
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - generic [ref=e14]:
+              - text: Email
+              - textbox "Email" [ref=e15]:
+                - /placeholder: tu@email.com
+            - generic [ref=e16]:
+              - generic [ref=e17]:
+                - generic [ref=e18]: Contraseña
+                - link "¿Olvidaste tu contraseña?" [ref=e19] [cursor=pointer]:
+                  - /url: /auth/forgot-password
+              - textbox "Contraseña" [ref=e20]:
+                - /placeholder: ••••••••
+            - button "Iniciar sesión" [ref=e21] [cursor=pointer]
+          - paragraph [ref=e22]:
+            - text: ¿No tienes cuenta?
+            - link "Crear cuenta" [ref=e23] [cursor=pointer]:
+              - /url: /auth/register
+      - paragraph [ref=e24]:
+        - link "← Volver al inicio" [ref=e25] [cursor=pointer]:
+          - /url: /
+    - generic [ref=e26]:
+      - blockquote [ref=e29]: “En Find Your Job validamos lo que sabes hacer. No lo que dices que sabes.”
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - img [ref=e33]
+          - generic [ref=e36]: Matching ponderado explicable
+        - generic [ref=e37]:
+          - img [ref=e39]
+          - generic [ref=e42]: Zero Trust desde el día 1
+        - generic [ref=e43]:
+          - img [ref=e45]
+          - generic [ref=e51]: Certificaciones verificables
+  - region "Notifications alt+T"

@@ -2,7 +2,11 @@ import { clearAuthSession, getAccessToken, getCurrentUser } from "@/lib/api/clie
 import type { User } from "@/lib/api/types";
 
 export type UserRole = User["role"];
-export type AuthRedirectPath = "/auth/login" | "/app/dashboard" | "/empresa/dashboard";
+export type AuthRedirectPath =
+  | "/auth/login"
+  | "/app/dashboard"
+  | "/empresa/dashboard"
+  | "/admin/verificacion";
 
 const VALID_ROLES: UserRole[] = ["candidate", "recruiter", "admin"];
 
@@ -17,7 +21,8 @@ export function getStoredUserRole(): UserRole | null {
 
 export function getHomeForRole(role: UserRole | null): AuthRedirectPath {
   if (role === "candidate") return "/app/dashboard";
-  if (role === "recruiter" || role === "admin") return "/empresa/dashboard";
+  if (role === "admin") return "/admin/verificacion";
+  if (role === "recruiter") return "/empresa/dashboard";
   return "/auth/login";
 }
 

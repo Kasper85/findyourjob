@@ -1,6 +1,6 @@
 # AGENTS.md — Find Your Job
 
-> **Project**: Find Your Job — AI-powered job positioning platform  
+> **Project**: Find Your Job — Job positioning platform with trust-based matching  
 > **Stack**: Go (Gin) + React (TanStack Start) + PostgreSQL  
 > **Architecture**: Modular monolith with Clean Architecture  
 > **Last updated**: 2026-06-11
@@ -121,10 +121,10 @@ Find Your Job is a local-first job positioning platform for tech talent. It help
 
 ---
 
-### AI Engineer
+### AI Engineer *(Post-MVP Vision — Not Active)*
 
 **Role**: AI/ML integration, embeddings, semantic matching  
-**Scope**: Future AI features (Ollama, Groq, pgvector)  
+**Scope**: Future AI features (Ollama, Groq, pgvector) — NOT current MVP  
 **Triggers**: AI feature planning, embedding implementation, matching algorithm
 
 **Responsibilities**:
@@ -134,10 +134,11 @@ Find Your Job is a local-first job positioning platform for tech talent. It help
 - Ensure AI features enhance (not replace) existing matching
 
 **Constraints**:
-- AI features are deferred to Phase 11+ (post-MVP)
+- AI features are deferred to post-MVP roadmap
 - Cannot block MVP delivery with AI dependencies
 - Must integrate with existing matching module, not replace it
 - Cannot require external API keys for MVP demo
+- This agent is NOT active for current university demo preparation
 
 ---
 
@@ -236,18 +237,30 @@ Any Agent → Product Manager (feature prioritization)
 
 ## Goals Reference
 
-Reusable goals are stored in `.atl/goals/`. Load the relevant goal before starting work:
+### Primary Goal
 
-| Goal | File | Use When |
-|------|------|----------|
-| Phase 15 | `.atl/goals/phase15-polish.md` | **ACTIVE**: Polish & QA for demo readiness |
-| Frontend | `.atl/goals/frontend.md` | Working on React components, routes, UI |
-| Backend | `.atl/goals/backend.md` | Working on Go modules, API, database |
-| AI | `.atl/goals/ai.md` | Planning or implementing AI features |
-| UX | `.atl/goals/ux.md` | UI/UX decisions, accessibility, design |
-| QA | `.atl/goals/qa.md` | Testing, quality assurance, demo validation |
-| Demo | `.atl/goals/demo.md` | Preparing university demo, seeds, presentation |
-| MVP | `.atl/goals/mvp.md` | Startup readiness, production planning |
+**`.atl/goals/university-demo-master.md`** — Single Source of Truth for all university demo preparation. This is the master orchestrator that coordinates all other goals.
+
+### Goal Resolution Order
+
+When starting any work, load goals in this order. The primary goal takes precedence over all others.
+
+| Priority | Goal | File | Role |
+|----------|------|------|------|
+| 1 | **University Demo Master** | `.atl/goals/university-demo-master.md` | Master orchestrator — coordinates all goals |
+| 2 | Demo University | `.atl/goals/demo-university.md` | Demo flow + presentation + script |
+| 3 | UI Polish | `.atl/goals/ui-polish.md` | Visual polish + states + perception |
+| 4 | UX Flows | `.atl/goals/ux-flows.md` | Journeys + navigation + forms |
+| 5 | Pitch Alignment | `.atl/goals/pitch-alignment.md` | Narrative + professor questions |
+| 6 | QA | `.atl/goals/qa.md` | Validation + testing |
+| 7 | Frontend | `.atl/goals/frontend.md` | React + TanStack + shadcn standards |
+| 8 | UX | `.atl/goals/ux.md` | Accessibility + responsive + design |
+| 9 | Backend | `.atl/goals/backend.md` | Go + Gin + PostgreSQL standards |
+| 10 | MVP Boundaries | `.atl/goals/mvp-boundaries.md` | Scope control — blocks over-engineering |
+
+> **Important**: The specialized goals are NOT replaced. They are subordinate to the master goal.  
+> **Archived goals**: `.atl/goals/archive/phase15-polish.md`, `.atl/goals/archive/ai.md`, `.atl/goals/archive/demo.md`  
+> **Superseded**: `demo.md` → replaced by `demo-university.md`, `mvp.md` → replaced by `mvp-boundaries.md`
 
 ---
 
@@ -288,6 +301,7 @@ Use Engram for persistent memory across sessions:
 | `product/vision` | Vision, target users, value prop | On change |
 | `status/current` | Current project status | On phase complete |
 | `demo/university` | Demo flow, seeds, presentation | On change |
+| `project/history` | Phase-by-phase executive summary in `docs/PROJECT_HISTORY.md` | On phase complete |
 
 ---
 

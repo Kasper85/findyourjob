@@ -33,19 +33,9 @@ import { Badge } from "@/components/ui/badge";
 const hiring = [
   { title: "Dashboard", url: "/empresa/dashboard", icon: LayoutDashboard },
   { title: "Vacantes", url: "/empresa/vacantes", icon: Briefcase },
-  { title: "Buscar talento", url: "/empresa/talento", icon: Users },
-  { title: "Talent Pool", url: "/empresa/talent-pool", icon: Sparkles },
   { title: "Entrevistas", url: "/empresa/entrevistas", icon: Calendar },
 ];
-const insights = [
-  { title: "Analítica", url: "/empresa/analitica", icon: BarChart3 },
-  { title: "ROI", url: "/empresa/roi", icon: TrendingUp },
-];
-const org = [
-  { title: "Equipo", url: "/empresa/equipo", icon: UsersRound },
-  { title: "Facturación", url: "/empresa/facturacion", icon: CreditCard },
-  { title: "Configuración", url: "/empresa/configuracion", icon: Settings },
-];
+const org = [{ title: "Configuración", url: "/empresa/configuracion", icon: Settings }];
 
 export function EmpresaSidebar() {
   const { state } = useSidebar();
@@ -71,7 +61,6 @@ export function EmpresaSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <Group label="Reclutamiento" items={hiring} collapsed={collapsed} pathname={pathname} />
-        <Group label="Insights" items={insights} collapsed={collapsed} pathname={pathname} />
         <Group label="Organización" items={org} collapsed={collapsed} pathname={pathname} />
       </SidebarContent>
       <SidebarFooter className="border-t border-sidebar-border">

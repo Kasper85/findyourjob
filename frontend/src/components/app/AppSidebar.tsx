@@ -38,12 +38,9 @@ import { user } from "@/lib/mock/data";
 const main = [
   { title: "Dashboard", url: "/app/dashboard", icon: LayoutDashboard },
   { title: "Perfil", url: "/app/perfil", icon: UserCircle },
-  { title: "CV", url: "/app/cv", icon: FileText },
 ];
 const intelligence = [
   { title: "Empleabilidad", url: "/app/empleabilidad", icon: Activity },
-  { title: "Mapa de Skills", url: "/app/skills", icon: Radar },
-  { title: "Explicabilidad Match", url: "/app/match", icon: Sparkles },
   { title: "Zero Trust", url: "/app/verificacion", icon: ShieldCheck },
 ];
 const work = [
@@ -52,12 +49,8 @@ const work = [
   { title: "Entrevistas", url: "/app/entrevistas", icon: Calendar },
 ];
 const growth = [
-  { title: "Challenges técnicos", url: "/app/challenges", icon: Cpu },
   { title: "Evaluaciones", url: "/app/evaluaciones", icon: GraduationCap },
   { title: "Certificaciones", url: "/app/certificaciones", icon: Award },
-  { title: "Catálogo certs", url: "/app/certificaciones/catalogo", icon: ShoppingBag },
-  { title: "Aprendizaje", url: "/app/aprendizaje", icon: ShoppingBag },
-  { title: "Plan de aprendizaje", url: "/app/learning", icon: BookOpen },
 ];
 const system = [
   { title: "Notificaciones", url: "/app/notificaciones", icon: Bell },

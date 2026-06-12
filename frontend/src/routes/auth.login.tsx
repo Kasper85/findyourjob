@@ -33,7 +33,9 @@ function Login() {
     try {
       const resp = await login(email, password);
       toast.success("Sesión iniciada");
-      if (resp.user.role === "recruiter" || resp.user.role === "admin") {
+      if (resp.user.role === "admin") {
+        nav({ to: "/admin/verificacion" });
+      } else if (resp.user.role === "recruiter") {
         nav({ to: "/empresa/dashboard" });
       } else {
         nav({ to: "/app/dashboard" });

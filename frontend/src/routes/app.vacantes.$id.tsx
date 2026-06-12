@@ -135,6 +135,35 @@ function Detail() {
               <p className="text-xs text-muted-foreground mt-0.5">
                 {match.level.replace("_", " ")}
               </p>
+
+              {/* Match Breakdown */}
+              <div className="mt-4 space-y-2">
+                <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
+                  Desglose del match
+                </p>
+                <div className="space-y-2">
+                  <BreakdownBar label="Skills" value={match.breakdown.skills} weight={50} />
+                  <BreakdownBar
+                    label="Evaluaciones"
+                    value={match.breakdown.evaluations}
+                    weight={25}
+                  />
+                  <BreakdownBar
+                    label="Experiencia"
+                    value={match.breakdown.experience}
+                    weight={15}
+                  />
+                  <BreakdownBar
+                    label="Certificaciones"
+                    value={match.breakdown.certifications}
+                    weight={10}
+                  />
+                </div>
+                {match.explanation && (
+                  <p className="text-xs text-muted-foreground mt-2 italic">{match.explanation}</p>
+                )}
+              </div>
+
               {matchedSkills.length > 0 && (
                 <div className="mt-3">
                   <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
@@ -181,6 +210,24 @@ function Detail() {
           </Card>
         </div>
       </div>
+    </div>
+  );
+}
+
+function BreakdownBar({ label, value, weight }: { label: string; value: number; weight: number }) {
+  return (
+    <div className="space-y-1">
+      <div className="flex items-center justify-between text-xs">
+        <span className="text-muted-foreground">{label}</span>
+        <span className="font-mono font-medium">{value}%</span>
+      </div>
+      <div className="h-2 bg-muted rounded-full overflow-hidden">
+        <div
+          className="h-full bg-primary rounded-full transition-all"
+          style={{ width: `${value}%` }}
+        />
+      </div>
+      <p className="text-[10px] text-muted-foreground font-mono">Peso: {weight}%</p>
     </div>
   );
 }
