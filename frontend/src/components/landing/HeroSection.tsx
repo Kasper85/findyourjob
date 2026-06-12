@@ -76,7 +76,7 @@ function HeroVisual() {
       <Card className="absolute -top-4 -right-4 p-3 border-border/80 shadow-xl hidden sm:flex items-center gap-2.5 bg-card">
         <Bot className="h-5 w-5 text-primary" />
         <div>
-          <p className="text-xs font-semibold">IA NLP</p>
+          <p className="text-xs font-semibold">Match</p>
           <p className="text-[10px] text-muted-foreground font-mono">Análisis en 1.2s</p>
         </div>
       </Card>
@@ -96,7 +96,7 @@ export function HeroSection() {
               variant="outline"
               className="border-primary/40 bg-primary/10 text-primary font-mono text-xs"
             >
-              <Sparkles className="mr-1.5 h-3 w-3" /> IA · Match Semántico · Zero Trust
+              <Sparkles className="mr-1.5 h-3 w-3" /> Matching ponderado · Señales verificables
             </Badge>
             <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
               Talento tech <span className="text-primary">verificado</span>,<br />
@@ -104,7 +104,8 @@ export function HeroSection() {
             </h1>
             <p className="mt-5 max-w-xl text-base md:text-lg text-muted-foreground">
               La plataforma de reclutamiento inteligente para Tech, Ciberseguridad, Fintech y Telco.
-              Validamos competencias reales con IA antes de que llegues a la entrevista.
+              Validamos competencias reales con señales verificables antes de que llegues a la
+              entrevista.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button asChild size="lg" className="font-semibold">

@@ -35,7 +35,7 @@ export function CandidateCard({ candidate }: { candidate: TalentCandidate }) {
               <span className="flex items-center gap-1 text-muted-foreground">
                 <Award className="h-3 w-3" /> {candidate.certifications} certs
               </span>
-              <span className="font-mono text-primary">IA {candidate.employabilityIndex}</span>
+              <span className="font-mono text-primary">Score {candidate.employabilityIndex}</span>
             </div>
             <div className="mt-2.5 flex flex-wrap gap-1">
               {candidate.skills.slice(0, 5).map((s) => (

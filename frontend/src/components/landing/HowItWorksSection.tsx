@@ -5,7 +5,7 @@ const steps = [
   {
     n: "01",
     title: "Sube tu CV",
-    desc: "La IA analiza skills, experiencia y educación. Detecta vacíos.",
+    desc: "El sistema compara skills, experiencia y educación. Detecta vacíos.",
   },
   {
     n: "02",

@@ -26,7 +26,7 @@ function Page() {
     <div className="max-w-6xl mx-auto space-y-6">
       <PageHeader
         title="Marketplace de Aprendizaje"
-        description="Cursos recomendados por IA para cerrar tus brechas y maximizar tu empleabilidad."
+        description="Cursos recomendados por señales para cerrar tus brechas y maximizar tu empleabilidad."
       />
 
       <Card className="p-4 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center bg-primary/5 border-primary/30">
@@ -84,7 +84,7 @@ function Page() {
             <div className="mt-4 pt-4 border-t border-border space-y-2">
               <div className="flex items-center justify-between text-xs">
                 <span className="flex items-center gap-1.5 text-primary">
-                  <TrendingUp className="h-3 w-3" /> Impacto IA
+                  <TrendingUp className="h-3 w-3" /> Impacto
                 </span>
                 <span className="font-mono font-bold text-primary">
                   +{c.employabilityImpact} pts

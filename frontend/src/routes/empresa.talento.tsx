@@ -148,7 +148,7 @@ function Talento() {
 
           <div>
             <div className="flex items-center justify-between">
-              <Label className="text-xs">Match mínimo IA</Label>
+              <Label className="text-xs">Match mínimo</Label>
               <span className="font-mono text-xs text-primary">{minMatch[0]}%</span>
             </div>
             <Slider
@@ -199,7 +199,7 @@ function Talento() {
               </span>
             </div>
             <div className="text-xs text-muted-foreground hidden sm:block">
-              Ordenado por match IA
+              Ordenado por match ponderado
             </div>
           </Card>
 

@@ -29,7 +29,7 @@ export function MatchBreakdown({
               : "¿Por qué recomendamos este candidato?"}
           </p>
           <h3 className="mt-1 text-lg font-semibold flex items-center gap-2">
-            <Sparkles className="h-4 w-4 text-primary" /> Explicabilidad IA
+            <Sparkles className="h-4 w-4 text-primary" /> Explicabilidad del match
           </h3>
         </div>
         <div className="text-right">

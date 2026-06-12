@@ -453,7 +453,7 @@ export const companyAnalytics = {
   timeToHire: 18,
   funnel: [
     { stage: "Aplicaciones", value: 202 },
-    { stage: "Pre-cualificados IA", value: 138 },
+    { stage: "Pre-cualificados", value: 138 },
     { stage: "Shortlist", value: 32 },
     { stage: "Entrevistas", value: 18 },
     { stage: "Ofertas", value: 6 },

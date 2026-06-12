@@ -17,16 +17,20 @@ import { FinalCTASection } from "@/components/landing/FinalCTASection";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Find Your Job — Talento tech verificado con IA" },
+      { title: "Find Your Job — Talento tech verificado con señales verificables" },
       {
         name: "description",
         content:
-          "Reclutamiento inteligente para Tech, Ciberseguridad, Fintech y Telco. Match semántico con NLP, evaluaciones técnicas y certificaciones Zero Trust.",
+          "Reclutamiento inteligente para Tech, Ciberseguridad, Fintech y Telco. Matching ponderado explicable, evaluaciones técnicas y certificaciones Zero Trust.",
       },
-      { property: "og:title", content: "Find Your Job — Talento tech verificado con IA" },
+      {
+        property: "og:title",
+        content: "Find Your Job — Talento tech verificado con señales verificables",
+      },
       {
         property: "og:description",
-        content: "Reclutamiento inteligente con IA, match semántico y validación Zero Trust.",
+        content:
+          "Reclutamiento inteligente con señales verificables, matching ponderado y validación Zero Trust.",
       },
     ],
   }),

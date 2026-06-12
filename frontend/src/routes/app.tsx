@@ -1,4 +1,6 @@
 import { Outlet, createFileRoute, redirect } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { useNavigate } from "@tanstack/react-router";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app/AppSidebar";
 import { AppTopbar } from "@/components/app/AppTopbar";
@@ -13,6 +15,13 @@ export const Route = createFileRoute("/app")({
 });
 
 function AppLayout() {
+  const nav = useNavigate();
+
+  useEffect(() => {
+    const to = requireRole(["candidate"]);
+    if (to) nav({ to });
+  }, [nav]);
+
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full bg-background text-foreground">

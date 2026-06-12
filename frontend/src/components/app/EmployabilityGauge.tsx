@@ -33,7 +33,7 @@ export function EmployabilityGauge({ value, size = 240 }: { value: number; size?
         <div>
           <p className="font-mono text-5xl font-bold leading-none">{value}</p>
           <p className="mt-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-            Índice IA
+            Índice
           </p>
         </div>
       </div>

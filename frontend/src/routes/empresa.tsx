@@ -1,4 +1,6 @@
 import { Outlet, createFileRoute, redirect } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { useNavigate } from "@tanstack/react-router";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { EmpresaSidebar } from "@/components/empresa/EmpresaSidebar";
 import { EmpresaTopbar } from "@/components/empresa/EmpresaTopbar";
@@ -13,6 +15,13 @@ export const Route = createFileRoute("/empresa")({
 });
 
 function EmpresaLayout() {
+  const nav = useNavigate();
+
+  useEffect(() => {
+    const to = requireRole(["recruiter", "admin"]);
+    if (to) nav({ to });
+  }, [nav]);
+
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full bg-background text-foreground">

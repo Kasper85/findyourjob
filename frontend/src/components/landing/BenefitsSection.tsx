@@ -5,12 +5,12 @@ import { SectionHeader } from "@/components/landing/SectionHeader";
 const benefits = [
   {
     icon: BarChart3,
-    title: "Índice de Empleabilidad IA",
+    title: "Índice de empleabilidad",
     desc: "Sabe exactamente qué te falta para conseguir el trabajo que quieres.",
   },
   {
     icon: Briefcase,
-    title: "Match semántico real",
+    title: "Matching ponderado real",
     desc: "Comparación NLP entre tus skills y cada vacante, no keywords.",
   },
   {
@@ -20,7 +20,7 @@ const benefits = [
   },
   {
     icon: GraduationCap,
-    title: "Learning Path personalizado",
+    title: "Plan de aprendizaje personalizado",
     desc: "Aprende justo lo que te falta para aplicar a más vacantes.",
   },
 ];

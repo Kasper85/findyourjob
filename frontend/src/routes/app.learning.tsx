@@ -6,13 +6,14 @@ import { Progress } from "@/components/ui/progress";
 import { PageHeader } from "@/components/app/EmptyState";
 import { learningPath } from "@/lib/mock/data";
 import { BookOpen, CheckCircle2, Award, Clock, ChevronRight } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/app/learning")({
-  head: () => ({ meta: [{ title: "Learning Path — Find Your Job" }] }),
+  head: () => ({ meta: [{ title: "Plan de aprendizaje — Find Your Job" }] }),
   component: Learning,
 });
 
-const typeIcon: Record<string, any> = {
+const typeIcon: Record<string, LucideIcon> = {
   Curso: BookOpen,
   Evaluación: CheckCircle2,
   Certificación: Award,
@@ -25,8 +26,8 @@ function Learning() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <PageHeader
-        title="Tu Learning Path"
-        description="Generado por IA según las brechas detectadas en tu perfil."
+        title="Tu Plan de aprendizaje"
+        description="Sugerido según las brechas detectadas en tu perfil."
       />
 
       <Card className="p-6">

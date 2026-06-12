@@ -4,13 +4,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PageHeader } from "@/components/app/EmptyState";
 import { notifications } from "@/lib/mock/data";
 import { Bell, Briefcase, Award, CheckCircle2, Settings } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/app/notificaciones")({
   head: () => ({ meta: [{ title: "Notificaciones — Find Your Job" }] }),
   component: Notifs,
 });
 
-const icon: Record<string, any> = {
+const icon: Record<string, LucideIcon> = {
   vacante: Briefcase,
   certificacion: Award,
   evaluacion: CheckCircle2,

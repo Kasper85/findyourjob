@@ -31,7 +31,7 @@ const b2c = [
     desc: "Empieza a verificarte",
     features: [
       "Perfil profesional",
-      "Análisis CV con IA",
+      "Análisis CV con señales verificables",
       "1 evaluación / mes",
       "Vacantes públicas",
     ],
@@ -73,7 +73,7 @@ const b2b = [
       "5 vacantes activas",
       "Buscador de talento",
       "100 perfiles desbloqueables/mes",
-      "Ranking IA",
+      "Ranking por match",
     ],
     cta: "Empezar",
     featured: false,

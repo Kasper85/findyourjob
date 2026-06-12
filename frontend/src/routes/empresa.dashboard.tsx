@@ -25,6 +25,7 @@ import {
   Eye,
   UserCheck,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/empresa/dashboard")({
   head: () => ({ meta: [{ title: "Dashboard Empresa — Find Your Job" }] }),
@@ -70,7 +71,7 @@ function EmpresaDashboard() {
         />
         <MetricCard
           icon={Sparkles}
-          label="Match promedio IA"
+          label="Match promedio"
           value={`${companyAnalytics.avgMatch}%`}
         />
         <MetricCard
@@ -85,7 +86,7 @@ function EmpresaDashboard() {
         <Card className="lg:col-span-2 p-6">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h3 className="font-semibold">Top candidatos por match IA</h3>
+              <h3 className="font-semibold">Top candidatos por match ponderado</h3>
               <p className="text-xs text-muted-foreground">
                 Pre-cualificados con Zero Trust verificado
               </p>
@@ -243,7 +244,7 @@ function MetricCard({
   value,
   delta,
 }: {
-  icon: any;
+  icon: LucideIcon;
   label: string;
   value: string;
   delta?: string;

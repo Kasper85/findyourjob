@@ -12,7 +12,7 @@ const plans = [
     desc: "Empieza a verificarte",
     features: [
       "Perfil profesional",
-      "Análisis CV con IA",
+      "Análisis CV con señales verificables",
       "1 evaluación / mes",
       "Match con vacantes públicas",
     ],

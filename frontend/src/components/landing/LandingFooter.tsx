@@ -52,7 +52,7 @@ export function LandingFooter() {
         </div>
         <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Find Your Job. Todos los derechos reservados.</p>
-          <p className="font-mono">Hecho con IA · Validado con Zero Trust</p>
+          <p className="font-mono">Hecho con señales verificables · Validado con Zero Trust</p>
         </div>
       </div>
     </footer>

@@ -29,6 +29,7 @@ import {
   Check,
   ChevronRight,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/app/dashboard")({
   head: () => ({ meta: [{ title: "Dashboard — Find Your Job" }] }),
@@ -39,7 +40,11 @@ function Dashboard() {
   const top = jobs.slice(0, 3);
   const next = learningPath.slice(0, 3);
   const [recs, setRecs] = useState<RecommendationItem[]>([]);
-  useEffect(() => { getRecommendations({ limit: "3" }).then((r) => setRecs(r.data)).catch(() => {}); }, []);
+  useEffect(() => {
+    getRecommendations({ limit: "3" })
+      .then((r) => setRecs(r.data))
+      .catch(() => {});
+  }, []);
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
       <PageHeader
@@ -56,7 +61,7 @@ function Dashboard() {
               <div className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-primary" />
                 <span className="text-xs font-mono uppercase tracking-widest text-primary">
-                  Índice de empleabilidad IA
+                  Índice de empleabilidad
                 </span>
               </div>
               <h2 className="mt-2 text-2xl font-bold">Estás en el top 25% de tu campo</h2>
@@ -87,7 +92,7 @@ function Dashboard() {
           </div>
           <ul className="mt-5 space-y-2.5 text-sm">
             <CheckItem ok label="Email verificado" />
-            <CheckItem ok label="CV analizado con IA" />
+            <CheckItem ok label="CV analizado con señales verificables" />
             <CheckItem ok label="1 evaluación aprobada" />
             <CheckItem label="Verificación de identidad" />
             <CheckItem label="3+ evaluaciones aprobadas" />
@@ -195,8 +200,10 @@ function Dashboard() {
           {recs.length > 0 && (
             <Card className="p-6 border-primary/30">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-semibold">Recomendaciones IA</h3>
-                <Button asChild variant="ghost" size="sm"><Link to="/app/vacantes">Ver todas</Link></Button>
+                <h3 className="font-semibold">Recomendaciones</h3>
+                <Button asChild variant="ghost" size="sm">
+                  <Link to="/app/vacantes">Ver todas</Link>
+                </Button>
               </div>
               <div className="space-y-3">
                 {recs.map((r) => (
@@ -204,9 +211,19 @@ function Dashboard() {
                     <div className="flex items-center justify-between gap-3 p-3 rounded-md hover:bg-muted/40">
                       <div className="min-w-0">
                         <p className="text-sm font-medium truncate">{r.job.title}</p>
-                        <p className="text-xs text-muted-foreground">{r.job.location ?? "Remoto"}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {r.job.location ?? "Remoto"}
+                        </p>
                       </div>
-                      <Badge variant="outline" className="font-mono">{Math.round(r.match.skills * 0.5 + r.match.evaluations * 0.25 + r.match.experience * 0.15 + r.match.certifications * 0.1)}%</Badge>
+                      <Badge variant="outline" className="font-mono">
+                        {Math.round(
+                          r.match.skills * 0.5 +
+                            r.match.evaluations * 0.25 +
+                            r.match.experience * 0.15 +
+                            r.match.certifications * 0.1,
+                        )}
+                        %
+                      </Badge>
                     </div>
                   </Link>
                 ))}
@@ -239,7 +256,7 @@ function MetricCard({
   delta,
   progress,
 }: {
-  icon: any;
+  icon: LucideIcon;
   label: string;
   value: string;
   delta?: string;

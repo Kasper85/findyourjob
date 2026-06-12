@@ -8,8 +8,8 @@ import { SectionHeader } from "@/components/landing/SectionHeader";
 
 const faqItems = [
   {
-    q: "¿Qué es el Índice de Empleabilidad IA?",
-    a: "Un score 0-100 calculado por nuestra IA con base en tu perfil, evaluaciones aprobadas, certificaciones y nivel Zero Trust. Se actualiza en tiempo real.",
+    q: "¿Qué es el Índice de empleabilidad?",
+    a: "Un score 0-100 calculado con reglas ponderadas con base en tu perfil, evaluaciones aprobadas, certificaciones y nivel Zero Trust. Se actualiza en tiempo real.",
   },
   {
     q: "¿Cómo funciona Zero Trust?",

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import type { ReactNode } from "react";
+import type { LucideIcon } from "lucide-react";
 
 export function EmptyState({
   icon: Icon,
@@ -9,7 +10,7 @@ export function EmptyState({
   description,
   action,
 }: {
-  icon: any;
+  icon: LucideIcon;
   title: string;
   description: string;
   action?: { label: string; to: string };

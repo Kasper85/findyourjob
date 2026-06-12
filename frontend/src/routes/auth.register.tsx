@@ -61,7 +61,13 @@ function Register() {
             {error && <p className="text-sm text-destructive">{error}</p>}
             <Field id="cname" name="name" label="Nombre completo" placeholder="Diego Ramírez" />
             <Field id="cemail" name="email" label="Email" type="email" placeholder="tu@email.com" />
-            <Field id="cpass" name="password" label="Contraseña" type="password" placeholder="Mínimo 8 caracteres" />
+            <Field
+              id="cpass"
+              name="password"
+              label="Contraseña"
+              type="password"
+              placeholder="Mínimo 8 caracteres"
+            />
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Creando…" : "Crear cuenta de candidato"}
             </Button>
@@ -71,8 +77,20 @@ function Register() {
           <form onSubmit={(e) => submit(e, "recruiter")} className="space-y-4">
             {error && <p className="text-sm text-destructive">{error}</p>}
             <Field id="rname" name="name" label="Tu nombre" placeholder="Andrés Park" />
-            <Field id="remail" name="email" label="Email corporativo" type="email" placeholder="andres@acme.com" />
-            <Field id="rpass" name="password" label="Contraseña" type="password" placeholder="Mínimo 8 caracteres" />
+            <Field
+              id="remail"
+              name="email"
+              label="Email corporativo"
+              type="email"
+              placeholder="andres@acme.com"
+            />
+            <Field
+              id="rpass"
+              name="password"
+              label="Contraseña"
+              type="password"
+              placeholder="Mínimo 8 caracteres"
+            />
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Creando…" : "Crear cuenta de empresa"}
             </Button>
@@ -89,7 +107,19 @@ function Register() {
   );
 }
 
-function Field({ id, name, label, type = "text", placeholder }: { id: string; name: string; label: string; type?: string; placeholder?: string }) {
+function Field({
+  id,
+  name,
+  label,
+  type = "text",
+  placeholder,
+}: {
+  id: string;
+  name: string;
+  label: string;
+  type?: string;
+  placeholder?: string;
+}) {
   return (
     <div className="space-y-1.5">
       <Label htmlFor={id}>{label}</Label>

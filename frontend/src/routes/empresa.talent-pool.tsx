@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/app/EmptyState";
 import { CandidateCard } from "@/components/empresa/CandidateCard";
 import { talentPool } from "@/lib/mock/company";
+import type { TalentCandidate } from "@/lib/mock/company";
 import { useState } from "react";
 import { ShieldCheck, Award, Sparkles, Star, Filter } from "lucide-react";
 
@@ -18,21 +19,26 @@ const tabs = [
     id: "verified",
     label: "100% Verificados",
     icon: ShieldCheck,
-    filter: (c: any) => c.verification === "full",
+    filter: (c: TalentCandidate) => c.verification === "full",
   },
   {
     id: "partial",
     label: "Parcialmente Verificados",
     icon: ShieldCheck,
-    filter: (c: any) => c.verification === "partial",
+    filter: (c: TalentCandidate) => c.verification === "partial",
   },
   {
     id: "certified",
     label: "Top Certificados",
     icon: Award,
-    filter: (c: any) => c.certifications >= 4,
+    filter: (c: TalentCandidate) => c.certifications >= 4,
   },
-  { id: "match", label: "Top Match", icon: Star, filter: (c: any) => (c.match ?? 0) >= 88 },
+  {
+    id: "match",
+    label: "Top Match",
+    icon: Star,
+    filter: (c: TalentCandidate) => (c.match ?? 0) >= 88,
+  },
 ] as const;
 
 function Page() {
@@ -44,7 +50,7 @@ function Page() {
     <div className="max-w-7xl mx-auto space-y-6">
       <PageHeader
         title="Pool de Talento Certificado"
-        description="El activo B2B de Find Your Job: talento técnico pre-validado, verificado y matcheado por IA."
+        description="El activo B2B de Find Your Job: talento técnico pre-validado, verificado y matcheado por señales."
       >
         <Button asChild variant="outline">
           <Link to="/empresa/talento">
@@ -64,7 +70,7 @@ function Page() {
           value={talentPool.filter((c) => c.certifications >= 4).length}
         />
         <Stat
-          label="Score IA medio"
+          label="Score medio"
           value={Math.round(
             talentPool.reduce((a, c) => a + c.employabilityIndex, 0) / talentPool.length,
           )}
@@ -80,7 +86,7 @@ function Page() {
         <div className="flex items-start gap-3">
           <Sparkles className="h-5 w-5 text-primary flex-none" />
           <div>
-            <p className="font-semibold text-sm">Talento pre-validado por IA + Zero Trust</p>
+            <p className="font-semibold text-sm">Talento pre-validado por señales + Zero Trust</p>
             <p className="text-xs text-muted-foreground mt-1">
               Todos los candidatos del pool han superado evaluaciones técnicas, validación de
               identidad y al menos una certificación FYJ.

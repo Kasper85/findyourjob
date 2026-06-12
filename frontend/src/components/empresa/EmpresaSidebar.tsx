@@ -12,6 +12,7 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -97,7 +98,7 @@ function Group({
   pathname,
 }: {
   label: string;
-  items: { title: string; url: string; icon: any }[];
+  items: { title: string; url: string; icon: LucideIcon }[];
   collapsed: boolean;
   pathname: string;
 }) {

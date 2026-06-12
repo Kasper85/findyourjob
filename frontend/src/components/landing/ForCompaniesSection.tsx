@@ -12,7 +12,7 @@ const items = [
   },
   {
     icon: Zap,
-    title: "Ranking IA",
+    title: "Ranking por match",
     desc: "Ordena tu pipeline por compatibilidad semántica con la vacante.",
   },
   {

@@ -8,7 +8,7 @@ import { matchExplanation } from "@/lib/mock/extra";
 import { Sparkles, Briefcase } from "lucide-react";
 
 export const Route = createFileRoute("/app/match")({
-  head: () => ({ meta: [{ title: "Explicabilidad del Match IA — Find Your Job" }] }),
+  head: () => ({ meta: [{ title: "Explicabilidad del Match ponderado — Find Your Job" }] }),
   component: Page,
 });
 
@@ -16,7 +16,7 @@ function Page() {
   return (
     <div className="max-w-5xl mx-auto space-y-6">
       <PageHeader
-        title="Explicabilidad del Match IA"
+        title="Explicabilidad del Match ponderado"
         description="Cada match es transparente: los factores, su peso y su evidencia."
       >
         <Button variant="outline" size="sm">

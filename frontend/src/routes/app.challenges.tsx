@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/app/EmptyState";
 import { edgeChallenges } from "@/lib/mock/extra";
 import { Cpu, Clock, Sparkles, Shield, Fingerprint, Zap, CheckCircle2 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/app/challenges")({
-  head: () => ({ meta: [{ title: "Edge AI Challenges — Find Your Job" }] }),
+  head: () => ({ meta: [{ title: "Challenges técnicos — Find Your Job" }] }),
   component: Page,
 });
 
@@ -25,7 +26,7 @@ function Page() {
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       <PageHeader
-        title="Edge AI Challenges"
+        title="Challenges técnicos"
         description="Micro-retos técnicos generados dinámicamente. Únicos para tu perfil, imposibles de copiar."
       />
 
@@ -33,7 +34,7 @@ function Page() {
         <div className="grid sm:grid-cols-3 gap-4 text-sm">
           <Feature
             icon={Cpu}
-            title="Edge AI"
+            title="Challenge técnico"
             desc="El reto se genera en el borde, no en el servidor central."
           />
           <Feature
@@ -130,7 +131,7 @@ function Page() {
   );
 }
 
-function Feature({ icon: Icon, title, desc }: { icon: any; title: string; desc: string }) {
+function Feature({ icon: Icon, title, desc }: { icon: LucideIcon; title: string; desc: string }) {
   return (
     <div className="flex gap-3">
       <div className="h-9 w-9 rounded-md bg-primary/15 text-primary grid place-items-center flex-none">

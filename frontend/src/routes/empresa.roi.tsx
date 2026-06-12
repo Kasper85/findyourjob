@@ -5,6 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { PageHeader } from "@/components/app/EmptyState";
 import { roiData } from "@/lib/mock/extra";
 import { TrendingDown, TrendingUp, DollarSign, Clock, Award, Users, Zap } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/empresa/roi")({
   head: () => ({ meta: [{ title: "ROI Empresarial — Find Your Job" }] }),
@@ -140,7 +141,7 @@ function KPI({
   positive,
   detail,
 }: {
-  icon: any;
+  icon: LucideIcon;
   label: string;
   value: string;
   delta: string;
@@ -195,7 +196,15 @@ function Bar({
   );
 }
 
-function Highlight({ icon: Icon, value, label }: { icon: any; value: string; label: string }) {
+function Highlight({
+  icon: Icon,
+  value,
+  label,
+}: {
+  icon: LucideIcon;
+  value: string;
+  label: string;
+}) {
   return (
     <div className="flex items-center gap-3">
       <Icon className="h-4 w-4 text-primary flex-none" />

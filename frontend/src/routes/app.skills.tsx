@@ -16,7 +16,7 @@ function SkillsPage() {
     <div className="max-w-6xl mx-auto space-y-6">
       <PageHeader
         title="Mapa de Habilidades"
-        description="Visualización de tu perfil técnico por dominio. La IA mide nivel actual vs verificado."
+        description="Visualización de tu perfil técnico por dominio. El sistema compara nivel actual vs verificado."
       />
 
       <div className="grid lg:grid-cols-2 gap-6">

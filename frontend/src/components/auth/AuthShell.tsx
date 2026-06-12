@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import type { LucideIcon } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Link } from "@tanstack/react-router";
 import { ShieldCheck, Sparkles, Trophy } from "lucide-react";
@@ -38,7 +39,7 @@ export function AuthShell({
           <span className="text-primary"> No lo que dices que sabes.</span>&rdquo;
         </blockquote>
         <div className="space-y-3 max-w-sm">
-          <Feature icon={Sparkles} title="IA + Match semántico" />
+          <Feature icon={Sparkles} title="Matching ponderado explicable" />
           <Feature icon={ShieldCheck} title="Zero Trust desde el día 1" />
           <Feature icon={Trophy} title="Certificaciones verificables" />
         </div>
@@ -47,7 +48,7 @@ export function AuthShell({
   );
 }
 
-function Feature({ icon: Icon, title }: { icon: any; title: string }) {
+function Feature({ icon: Icon, title }: { icon: LucideIcon; title: string }) {
   return (
     <div className="flex items-center gap-3 text-sm">
       <div className="h-9 w-9 rounded-md bg-primary/15 text-primary grid place-items-center">

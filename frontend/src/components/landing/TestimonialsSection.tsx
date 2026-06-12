@@ -5,7 +5,7 @@ import { SectionHeader } from "@/components/landing/SectionHeader";
 const testimonials = [
   {
     quote:
-      "Pasamos de tener entrevistas decepcionantes a contratar talento que entrega desde el día uno. El ranking IA es brutal.",
+      "Pasamos de tener entrevistas decepcionantes a contratar talento que entrega desde el día uno. El ranking por match es brutal.",
     name: "María Castillo",
     role: "Head of Engineering, Bloomline",
   },

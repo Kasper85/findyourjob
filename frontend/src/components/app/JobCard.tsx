@@ -16,12 +16,16 @@ export function JobCard({ job }: { job: Job }) {
             <div className="flex items-start justify-between gap-2">
               <p className="font-semibold text-sm leading-tight truncate">{job.title}</p>
               {job.status && (
-                <Badge variant="outline" className="text-[10px]">{job.status}</Badge>
+                <Badge variant="outline" className="text-[10px]">
+                  {job.status}
+                </Badge>
               )}
             </div>
             <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-muted-foreground">
               {job.location && (
-                <span className="flex items-center gap-1"><MapPin className="h-3 w-3" /> {job.location}</span>
+                <span className="flex items-center gap-1">
+                  <MapPin className="h-3 w-3" /> {job.location}
+                </span>
               )}
               {job.is_remote && <span>· Remoto</span>}
               {job.job_type && <span>· {job.job_type}</span>}

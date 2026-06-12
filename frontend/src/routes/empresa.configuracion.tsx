@@ -58,7 +58,7 @@ function Config() {
               defaultOn
             />
             <Row
-              title="Top match IA (90%+)"
+              title="Top match ponderado (90%+)"
               desc="Alerta inmediata para candidatos con match excepcional."
               defaultOn
             />

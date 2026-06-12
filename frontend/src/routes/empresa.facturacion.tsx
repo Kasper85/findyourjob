@@ -43,7 +43,7 @@ function Facturacion() {
               </p>
               <h3 className="mt-1 text-2xl font-bold">Find Your Job · {company.plan}</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Vacantes ilimitadas · 8 asientos · Match IA avanzado · Soporte prioritario
+                Vacantes ilimitadas · 8 asientos · Match ponderado avanzado · Soporte prioritario
               </p>
             </div>
             <Badge

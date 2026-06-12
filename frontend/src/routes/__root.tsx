@@ -77,17 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Find Your Job — Talento tech verificado con IA" },
+      { title: "Find Your Job — Talento tech verificado con señales verificables" },
       {
         name: "description",
         content:
-          "Plataforma de reclutamiento inteligente para Tech, Ciberseguridad, Fintech y Telco. Match semántico con IA, evaluaciones técnicas y certificaciones Zero Trust.",
+          "Plataforma de reclutamiento inteligente para Tech, Ciberseguridad, Fintech y Telco. Matching ponderado con señales verificables, evaluaciones técnicas y certificaciones Zero Trust.",
       },
       { name: "author", content: "Find Your Job" },
-      { property: "og:title", content: "Find Your Job — Talento tech verificado con IA" },
+      {
+        property: "og:title",
+        content: "Find Your Job — Talento tech verificado con señales verificables",
+      },
       {
         property: "og:description",
-        content: "Reclutamiento inteligente con IA, match semántico y validación Zero Trust.",
+        content:
+          "Reclutamiento inteligente con señales verificables, matching ponderado y validación Zero Trust.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

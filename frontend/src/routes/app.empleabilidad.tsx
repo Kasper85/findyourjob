@@ -17,9 +17,10 @@ import {
   UserCircle,
   Cpu,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export const Route = createFileRoute("/app/empleabilidad")({
-  head: () => ({ meta: [{ title: "Centro de Empleabilidad IA — Find Your Job" }] }),
+  head: () => ({ meta: [{ title: "Centro de Empleabilidad — Find Your Job" }] }),
   component: Page,
 });
 
@@ -38,8 +39,8 @@ function Page() {
   return (
     <div className="max-w-6xl mx-auto space-y-6">
       <PageHeader
-        title="Centro de Empleabilidad IA"
-        description="¿Por qué no consigo más entrevistas? La IA analiza tu perfil contra miles de vacantes activas."
+        title="Centro de Empleabilidad"
+        description="¿Por qué no consigo más entrevistas? El sistema compara tu perfil contra miles de vacantes activas."
       />
 
       <div className="grid lg:grid-cols-3 gap-4">
@@ -143,7 +144,7 @@ function Page() {
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Sparkles className="h-4 w-4 text-primary" />
-            <h3 className="font-semibold">Plan de impacto recomendado por IA</h3>
+            <h3 className="font-semibold">Plan de impacto recomendado por señales</h3>
           </div>
           <Badge variant="outline" className="font-mono text-[10px]">
             Priorizado por impacto
@@ -172,7 +173,7 @@ function Page() {
                     +{r.impact}
                   </p>
                   <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                    pts IA
+                    pts
                   </p>
                 </div>
                 <Button asChild variant="outline" size="sm" className="flex-none">
@@ -205,7 +206,7 @@ function Metric({
   value,
   detail,
 }: {
-  icon: any;
+  icon: LucideIcon;
   label: string;
   value: string;
   detail: string;

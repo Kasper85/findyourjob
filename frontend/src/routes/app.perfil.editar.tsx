@@ -21,7 +21,12 @@ function Edit() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
-  useEffect(() => { getProfile().then(setProfile).catch(() => {}).finally(() => setLoading(false)); }, []);
+  useEffect(() => {
+    getProfile()
+      .then(setProfile)
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
@@ -66,18 +71,39 @@ function Edit() {
   return (
     <div className="max-w-3xl mx-auto">
       <PageHeader title="Editar perfil" description="Mantén tu información profesional al día.">
-        <Button asChild variant="ghost"><Link to="/app/perfil">Cancelar</Link></Button>
-        <Button form="profile-form" type="submit" disabled={saving}>{saving ? "Guardando..." : "Guardar"}</Button>
+        <Button asChild variant="ghost">
+          <Link to="/app/perfil">Cancelar</Link>
+        </Button>
+        <Button form="profile-form" type="submit" disabled={saving}>
+          {saving ? "Guardando..." : "Guardar"}
+        </Button>
       </PageHeader>
       <form id="profile-form" onSubmit={save} className="space-y-6">
         <Card className="p-6">
           <h3 className="font-semibold mb-4">Información profesional</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <Field id="location" label="Ubicación" defaultValue={p?.location ?? ""} />
-            <Field id="preferred_location" label="Ubicación preferida" defaultValue={p?.preferred_location ?? ""} />
-            <Field id="experience_years" label="Años de experiencia" type="number" defaultValue={p?.experience_years?.toString() ?? "0"} />
+            <Field
+              id="preferred_location"
+              label="Ubicación preferida"
+              defaultValue={p?.preferred_location ?? ""}
+            />
+            <Field
+              id="experience_years"
+              label="Años de experiencia"
+              type="number"
+              defaultValue={p?.experience_years?.toString() ?? "0"}
+            />
             <div className="flex items-end pb-2">
-              <label className="flex items-center gap-2 text-sm"><input type="checkbox" id="preferred_remote" name="preferred_remote" defaultChecked={p?.preferred_remote ?? true} /> Prefiero remoto</label>
+              <label className="flex items-center gap-2 text-sm">
+                <input
+                  type="checkbox"
+                  id="preferred_remote"
+                  name="preferred_remote"
+                  defaultChecked={p?.preferred_remote ?? true}
+                />{" "}
+                Prefiero remoto
+              </label>
             </div>
           </div>
           <div className="mt-4 space-y-1.5">
@@ -96,8 +122,18 @@ function Edit() {
         <Card className="p-6">
           <h3 className="font-semibold mb-4">Salario esperado</h3>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Field id="salary_min" label="Mínimo" type="number" defaultValue={p?.salary_min?.toString() ?? ""} />
-            <Field id="salary_max" label="Máximo" type="number" defaultValue={p?.salary_max?.toString() ?? ""} />
+            <Field
+              id="salary_min"
+              label="Mínimo"
+              type="number"
+              defaultValue={p?.salary_min?.toString() ?? ""}
+            />
+            <Field
+              id="salary_max"
+              label="Máximo"
+              type="number"
+              defaultValue={p?.salary_max?.toString() ?? ""}
+            />
           </div>
         </Card>
       </form>
@@ -105,7 +141,17 @@ function Edit() {
   );
 }
 
-function Field({ id, label, type = "text", defaultValue }: { id: string; label: string; type?: string; defaultValue?: string }) {
+function Field({
+  id,
+  label,
+  type = "text",
+  defaultValue,
+}: {
+  id: string;
+  label: string;
+  type?: string;
+  defaultValue?: string;
+}) {
   return (
     <div className="space-y-1.5">
       <Label htmlFor={id}>{label}</Label>

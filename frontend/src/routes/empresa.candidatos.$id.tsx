@@ -159,7 +159,7 @@ function CandidateDetail() {
 
           <Card className="p-6">
             <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3">
-              Índice IA
+              Índice
             </p>
             <div className="flex items-baseline gap-2">
               <span className="font-mono text-3xl font-bold">{c.employabilityIndex}</span>

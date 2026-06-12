@@ -39,11 +39,14 @@ export function useAuth() {
     return resp;
   }, []);
 
-  const register = useCallback(async (email: string, password: string, name: string, role: string) => {
-    const resp = await apiRegister(email, password, name, role);
-    setState({ user: resp.user, isLoading: false, isAuthenticated: true });
-    return resp;
-  }, []);
+  const register = useCallback(
+    async (email: string, password: string, name: string, role: string) => {
+      const resp = await apiRegister(email, password, name, role);
+      setState({ user: resp.user, isLoading: false, isAuthenticated: true });
+      return resp;
+    },
+    [],
+  );
 
   const logout = useCallback(() => {
     clearAuthSession();

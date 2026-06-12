@@ -53,7 +53,14 @@ function Login() {
         {error && <p className="text-sm text-destructive">{error}</p>}
         <div className="space-y-1.5">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" type="email" placeholder="tu@email.com" required />
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="tu@email.com"
+            autoComplete="email"
+            required
+          />
         </div>
         <div className="space-y-1.5">
           <div className="flex justify-between">
@@ -62,7 +69,14 @@ function Login() {
               ¿Olvidaste tu contraseña?
             </Link>
           </div>
-          <Input id="password" type="password" placeholder="••••••••" required />
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="••••••••"
+            autoComplete="current-password"
+            required
+          />
         </div>
         <Button type="submit" className="w-full" disabled={loading}>
           {loading ? "Ingresando…" : "Iniciar sesión"}

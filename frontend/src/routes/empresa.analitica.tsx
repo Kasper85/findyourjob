@@ -18,7 +18,7 @@ function Analitica() {
     <div className="space-y-6 max-w-6xl mx-auto">
       <PageHeader
         title="Analítica"
-        description="Métricas de reclutamiento, conversión y rendimiento de IA."
+        description="Métricas de reclutamiento, conversión y rendimiento del matching."
       />
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -83,7 +83,7 @@ function Analitica() {
             variant="outline"
             className="font-mono text-[10px] border-primary/40 text-primary bg-primary/10"
           >
-            <Sparkles className="h-3 w-3 mr-1" /> IA reduce -42% el ruido
+            <Sparkles className="h-3 w-3 mr-1" /> Matching reduce -42% el ruido
           </Badge>
         </div>
         <div className="space-y-2">

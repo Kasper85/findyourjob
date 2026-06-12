@@ -19,10 +19,10 @@ export function AISection() {
               variant="outline"
               className="border-primary/40 bg-primary/10 text-primary font-mono text-xs"
             >
-              <Bot className="mr-1.5 h-3 w-3" /> IA aplicada
+              <Bot className="mr-1.5 h-3 w-3" /> Matching explicable
             </Badge>
             <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
-              Match Semántico NLP, no{" "}
+              Matching ponderado, no{" "}
               <span className="line-through text-muted-foreground/60">keyword matching</span>.
             </h2>
             <p className="mt-4 text-muted-foreground">
@@ -42,7 +42,7 @@ export function AISection() {
 
           <Card className="p-6 border-border/80">
             <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              Análisis IA
+              Análisis guiado
             </p>
             <div className="mt-3 space-y-3 font-mono text-xs">
               <div className="rounded bg-muted/50 p-3">

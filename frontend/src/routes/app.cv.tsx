@@ -37,7 +37,7 @@ function CV() {
     <div className="max-w-5xl mx-auto space-y-6">
       <PageHeader
         title="CV Inteligente"
-        description="Sube tu CV y nuestra IA extraerá skills, experiencia y educación."
+        description="Sube tu CV y el sistema registrará skills, experiencia y educación."
       />
 
       {stage === "idle" && (
@@ -57,7 +57,7 @@ function CV() {
       {stage === "analyzing" && (
         <Card className="p-10 text-center">
           <Loader2 className="mx-auto h-10 w-10 text-primary animate-spin" />
-          <h3 className="mt-4 font-semibold">Analizando tu CV con IA…</h3>
+          <h3 className="mt-4 font-semibold">Analizando tu CV con señales verificables…</h3>
           <p className="mt-1 text-sm text-muted-foreground">
             Extrayendo skills, experiencia y formación
           </p>

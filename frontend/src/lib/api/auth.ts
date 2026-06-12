@@ -1,8 +1,18 @@
 import { api, setAuthSession, clearAuthSession } from "./client";
 import type { AuthResponse, User, UserProfileResponse } from "./types";
 
-export async function register(email: string, password: string, name: string, role: string): Promise<AuthResponse> {
-  const resp = await api.post<AuthResponse>("/api/v1/auth/register", { email, password, name, role });
+export async function register(
+  email: string,
+  password: string,
+  name: string,
+  role: string,
+): Promise<AuthResponse> {
+  const resp = await api.post<AuthResponse>("/api/v1/auth/register", {
+    email,
+    password,
+    name,
+    role,
+  });
   setAuthSession(resp.token.access_token, resp.token.refresh_token, resp.user);
   return resp;
 }

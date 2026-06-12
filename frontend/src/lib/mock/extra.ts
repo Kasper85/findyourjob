@@ -57,7 +57,7 @@ export const employability = {
     },
     {
       id: "r4",
-      action: "Reto Edge AI: Kubernetes Networking",
+      action: "Reto técnico: Kubernetes Networking",
       impact: 7,
       kind: "challenge" as const,
       effort: "15 min",
@@ -236,7 +236,7 @@ export const certCatalog: CertCatalogItem[] = [
     durationHours: 12,
     difficulty: 4,
     skills: ["Kubernetes", "Docker"],
-    jobBenefit: "+12 puntos de empleabilidad IA",
+    jobBenefit: "+12 puntos de empleabilidad",
     popularity: 95,
     newest: true,
   },
@@ -285,7 +285,7 @@ export const certCatalog: CertCatalogItem[] = [
     durationHours: 20,
     difficulty: 5,
     skills: ["AWS", "Architecture", "IAM"],
-    jobBenefit: "+18 puntos de empleabilidad IA",
+    jobBenefit: "+18 puntos de empleabilidad",
     popularity: 97,
   },
 ];
@@ -485,10 +485,10 @@ export const roiData = {
 export const zeroTrustRequirements = [
   { id: "z1", label: "Perfil completo (>80%)", done: true, weight: 10 },
   { id: "z2", label: "Email corporativo o personal verificado", done: true, weight: 10 },
-  { id: "z3", label: "CV validado por IA (sin inconsistencias)", done: true, weight: 15 },
+  { id: "z3", label: "CV revisado (sin inconsistencias)", done: true, weight: 15 },
   { id: "z4", label: "Al menos 1 evaluación técnica aprobada", done: true, weight: 15 },
   { id: "z5", label: "Identidad verificada (KYC ligero)", done: false, weight: 20 },
   { id: "z6", label: "Al menos 1 certificación Find Your Job", done: true, weight: 15 },
   { id: "z7", label: "Referencia profesional validada", done: false, weight: 10 },
-  { id: "z8", label: "Reto Edge AI completado (últimos 90 días)", done: false, weight: 5 },
+  { id: "z8", label: "Reto técnico completado (últimos 90 días)", done: false, weight: 5 },
 ];

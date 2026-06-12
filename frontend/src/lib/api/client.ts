@@ -1,5 +1,5 @@
 // Base URL from environment variable
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8080";
+const BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8080").trim();
 
 // ── Token Management ────────────────────────────────
 
@@ -28,13 +28,20 @@ export function getCurrentUser<T = unknown>(): T | null {
   if (typeof window === "undefined") return null;
   const raw = localStorage.getItem(USER_KEY);
   if (!raw) return null;
-  try { return JSON.parse(raw) as T; } catch { return null; }
+  try {
+    return JSON.parse(raw) as T;
+  } catch {
+    return null;
+  }
 }
 
 // ── HTTP Client ─────────────────────────────────────
 
 class ApiError extends Error {
-  constructor(public status: number, message: string) {
+  constructor(
+    public status: number,
+    message: string,
+  ) {
     super(message);
     this.name = "ApiError";
   }
@@ -53,7 +60,12 @@ async function request<T>(method: string, path: string, body?: unknown): Promise
 
   if (!res.ok) {
     let msg = res.statusText;
-    try { const err = await res.json(); msg = err.error ?? msg; } catch { /* use statusText */ }
+    try {
+      const err = await res.json();
+      msg = err.error ?? msg;
+    } catch {
+      /* use statusText */
+    }
     throw new ApiError(res.status, msg);
   }
 
@@ -62,10 +74,10 @@ async function request<T>(method: string, path: string, body?: unknown): Promise
 }
 
 export const api = {
-  get:    <T>(path: string) => request<T>("GET", path),
-  post:   <T>(path: string, body?: unknown) => request<T>("POST", path, body),
-  put:    <T>(path: string, body?: unknown) => request<T>("PUT", path, body),
-  patch:  <T>(path: string, body?: unknown) => request<T>("PATCH", path, body),
+  get: <T>(path: string) => request<T>("GET", path),
+  post: <T>(path: string, body?: unknown) => request<T>("POST", path, body),
+  put: <T>(path: string, body?: unknown) => request<T>("PUT", path, body),
+  patch: <T>(path: string, body?: unknown) => request<T>("PATCH", path, body),
   delete: <T>(path: string) => request<T>("DELETE", path),
 };
 
